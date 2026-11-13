@@ -1,0 +1,11 @@
+[Unit]
+Description=SP11 Bluetooth diagnostics dump
+After=bluetooth.service
+Wants=bluetooth.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/sp11-bt-diag.sh
+
+[Install]
+WantedBy=multi-user.target

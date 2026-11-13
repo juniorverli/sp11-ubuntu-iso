@@ -1,0 +1,37 @@
+// SPDX-License-Identifier: BSD-3-Clause
+/*
+ * Extras para o Surface Pro 11 (X1P64100 "Denali") usados na ISO.
+ *
+ * Aplicar DEPOIS de:
+ *   - commits upstream de backlight (ver docs/DTS.md)
+ *   - x1p64100-microsoft-denali.dts (hamoa.dtsi + x1-microsoft-denali.dtsi)
+ *
+ * Compilar com scripts/build-dtb.sh
+ */
+
+/* Wi-Fi: CMA abaixo de 4 GiB (ath12k/WCN7850) */
+&{/reserved-memory/linux,cma} {
+	alloc-ranges = <0x0 0x80000000 0x0 0x80000000>;
+};
+
+/* PCIe4 = WCN7850 (Wi-Fi): pinmux + PERST/WAKE */
+&pcie4 {
+	pinctrl-0 = <&pcie4_default>;
+	pinctrl-names = "default";
+};
+
+&pcie4_port0 {
+	reset-gpios = <&tlmm 146 GPIO_ACTIVE_LOW>;
+	wake-gpios = <&tlmm 148 GPIO_ACTIVE_LOW>;
+};
+
+/*
+ * BT_EN do WCN7850. O hci_qca NAO consome esta propriedade (ele usa
+ * "enable-gpios"; o dono real do GPIO116 e o no wcn7850-pmu). Mantida
+ * como documentacao do hardware.
+ */
+&uart14 {
+	bluetooth {
+		bt-enable-gpios = <&tlmm 116 GPIO_ACTIVE_HIGH>;
+	};
+};

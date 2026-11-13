@@ -1,0 +1,12 @@
+# ISOs geradas (em C:\Users\junio\Downloads) e seu papel
+
+# sha256                                                            nome                                                  observacao
+4cc5744fde25a3ffad5db9aab0a70ac83a6868618821148a436b7d499b6e5f5a  stonking-sp11-20261026-stubble-bt.iso                 BASE que boota: Wi-Fi + backlight; BT nao funciona
+1d1294a639a801e334c73be7553a4f0c348d667522e28f034f18b7841fdaacaf  stonking-sp11-20261026-stubble-bt-v3.iso              base + ordem pwrseq_qcom_wcn + diagnostico de BT
+30025c9eae9d109d8accf82cdc515451f18e08d7a11865b0c30114ee2bd5635c  stonking-sp11-20261026-stubble-audio-bt-v2.iso         kernel oficial + modulos de audio (audio parado)
+e59ad1d96d994c223e2ba423c8372bf80347076722d0e6de4b6a995b2f0de93e  stonking-sp11-20261026-stubble-audio-bt.iso            NAO USAR: kernel recompilado, nao boota
+65064a3aae285f531f4bb7c4f4f6890a44f48a346879297b2099aabc30ea4509  stonking-sp11-20261026-stubble-wifi-final.iso          Wi-Fi funcionando
+5ec4ca5879e26865b0fb72a6ab94bca8db57e226e91da4072e5663420f8031d7  stonking-sp11-20261026-stubble-wifi-ucm.iso            Wi-Fi + UCM
+2293fd53214f1c723b75205f0bec7bd9455e720b5b348e3dfe1476220a073ec8  stonking-sp11-20261026-stubble-upstream-bl.iso         backlight upstream
+54e64b4ac26a61126464731bf26509bff967d167fc8df38971a03c41f5d118ef  stonking-sp11-20261026-stubble-bl-ubuntu.iso           backlight (DTB Ubuntu)
+031a5e0d40460d7ba9e7d587c9200442fc1e60d95cee3a5766c2bfe16a2c18f1  stonking-orig-fat32-64.iso                             base com alteracao minima (ESP FAT32 64M)
